@@ -1,50 +1,46 @@
 import './App.css';
-import Box from './Box.jsx';
 import { useState } from 'react';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
-import Counter from './Counter.jsx';
 import Form from './Form.jsx';
+import View from './View.jsx';
 
 function App() {
-  const [counter, setCounter] = useState(0);
+  /*   const [counter, setCounter] = useState(1000);
   const [persons, setPersons] = useState([
-    { id:1, name: "Teodor", title:"student" ,ocation:"Helsinki"},           { id:2, name: "Marius",title:"student" ,ocation:"Helsinki"},            { id:3, name: "Dana", title:"student", ocation:"Helsinki" },
-  ]);
+    { id: 1, name: 'Margit', title: 'CTO', location: 'Helsinki' },
+    { id: 2, name: 'Karin', title: 'designer', location: 'Tartu' },
+    { id: 3, name: 'Kati', title: 'developer', location: 'Far away' },
+  ]); */
+  /*   const [inputValue, setInputValue] = useState(''); */
+  const [formData, setFormData] = useState({});
 
-  const [inputValue, setInputValue] = useState('')
-
-  const changeHandler = (event) => {
+  /*   const changeHandler = (event) => {
     setInputValue(event.target.value);
+  }; */
+
+  const changeFormHandler = (event) => {
+    const { name, value } = event.target;
+
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+    console.log(formData);
   };
- 
-  const clickHandler = () => {
+
+  /*  const clickIncHandler = () => {
     setCounter(counter + 1);
   };
-
-  const clickDecrease = () => {
+  const clickDecHandler = () => {
     setCounter(counter - 1);
-  };
-
-
+  }; 
+ */
   return (
     <>
-    <Header />
-    <input type='text' onChange={changeHandler}/>
-      <p>{inputValue}</p>
-
-    
-    {persons.map((person) => (
-    <Box key={person.id}        name={person.name}
-    title={person.title}
-    location={person.location}
-    />
-    ))}
-    <Footer/>
+      <Header />
+      <Form changeHandler={changeFormHandler} />
+      <View {...formData} />
+      <Footer />
     </>
-    );
-    }
-
-
+  );
+}
 
 export default App;
