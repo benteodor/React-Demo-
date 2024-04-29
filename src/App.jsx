@@ -90,12 +90,14 @@ import Root from './Root.jsx';
 import Home from './Pages/Home.jsx';
 import About from './Pages/About.jsx';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ErrorPage from './Pages/ErrorPage.jsx';
  
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Root />,
+      errorElement: <ErrorPage />, 
       children: [
         { path: "/", element: <Home /> },
         { path: "/about", element: <About /> }
