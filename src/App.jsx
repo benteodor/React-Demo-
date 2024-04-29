@@ -4,6 +4,7 @@ import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import Form from './Form.jsx';
 import View from './View.jsx';
+import Dashboard from './Dashboard.jsx';
 
 function App() {
   /*   const [counter, setCounter] = useState(1000);
@@ -14,6 +15,7 @@ function App() {
   ]); */
   /*   const [inputValue, setInputValue] = useState(''); */
   const [formData, setFormData] = useState({});
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   /*   const changeHandler = (event) => {
     setInputValue(event.target.value);
@@ -36,8 +38,9 @@ function App() {
   return (
     <>
       <Header />
-      <Form changeHandler={changeFormHandler} />
-      <View {...formData} />
+     {isLoggedIn && <Dashboard user="Teodor" />}
+      {/*<Form changeHandler={changeFormHandler} />
+      <View {...formData} /> */}
       <Footer />
     </>
   );
