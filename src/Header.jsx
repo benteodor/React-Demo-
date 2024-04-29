@@ -2,7 +2,15 @@ const Header = () => {
     return (
       <header>
         <h1>React Demo</h1>
-      </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="#">Home</a>
+          <a href="/persons">Persons</a>
+        </li>
+      </ul>
+    </nav>
+    </header>
      
     );
   };

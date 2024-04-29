@@ -43,6 +43,11 @@ function App() {
   return (
     <>
       <Header />
+
+     
+
+      <a href='#'>Click me</a>
+
       <button onClick={displayHandler}>Click me</button><br></br><br></br>
      {isLoggedIn && <Dashboard user="Teodor" />}
       {/*<Form changeHandler={changeFormHandler} />
