@@ -1,9 +1,11 @@
 const Dashboard = ({user}) => {
     return (
         <div>
-            <h2>Welcome to inner circle, {user}</h2>
-
-        </div>
+            {user === "Dana" ? ( 
+            <h2>Welcome here, {user}</h2>) : ( <h2>Oh, you must be new one here {user}</h2>)
+            }
+            </div>
+         
         
     );
 };

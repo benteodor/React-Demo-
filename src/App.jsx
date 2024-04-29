@@ -20,6 +20,7 @@ function App() {
   const displayHandler = () => {
     setIsLoggedIn(!isLoggedIn);
   }
+  
 
   /*   const changeHandler = (event) => {
     setInputValue(event.target.value);
@@ -42,7 +43,7 @@ function App() {
   return (
     <>
       <Header />
-      <button onClick={displayHandler}>Click me</button>
+      <button onClick={displayHandler}>Click me</button><br></br><br></br>
      {isLoggedIn && <Dashboard user="Teodor" />}
       {/*<Form changeHandler={changeFormHandler} />
       <View {...formData} /> */}
