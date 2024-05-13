@@ -6,6 +6,7 @@ import ErrorPage from './routes/ErrorPage.jsx';
 import Persons from './routes/Persons.jsx';
 import Root from './routes/Root.jsx';
 import axios from 'axios';
+import Users from './routes/Users.jsx';
 
 function App() {
   const [persons, setPersons] = useState([
@@ -30,7 +31,7 @@ function App() {
       children: [
         { path: '/', element: <Home /> },
         { path: '/about', element: <About /> },
-        { path: '/users', element: <Users />},
+        { path: '/users', element: <Users users={users}/>},
         { path: '/persons', element: <Persons persons={persons} /> },
       ],
     },
